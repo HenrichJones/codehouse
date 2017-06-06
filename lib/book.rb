@@ -3,6 +3,7 @@ require File.expand_path('lib/book')
 class Book
   attr_accessor :price
   attr_reader :category
+  attr_reader :author
 
   def initialize page_number, category, author, price, isbn = 1
     @page_number    = page_number
