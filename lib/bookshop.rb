@@ -16,8 +16,9 @@ class Bookshop
 
   def books_per_category category
     @books[category].each do |book|
-      yield book
+      yield book if block_given?
     end
+
   end
 
 end
