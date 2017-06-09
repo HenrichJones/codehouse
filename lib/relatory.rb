@@ -12,4 +12,8 @@ class Relatory
     }
   end
 
+  def titles
+    @bookshop.books.map &:title
+  end
+
 end

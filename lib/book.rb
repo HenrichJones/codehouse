@@ -1,16 +1,21 @@
 class Book
   attr_accessor :price
-  attr_reader :category, :author
+  attr_reader :category, :author, :title
 
-  def initialize page_number, category, author, price, isbn = 1
+  def initialize page_number, category, author, title, price, isbn = 1
     @page_number    = page_number
     @category       = category
     @author         = author
+    @title          = title
     @price          = price
     @isbn           = isbn
   end
 
-  def to_s
-    "Author: #{@author}, ISBN: #{@isbn}, Page Number: #{@page_number}, Price: #{@price}, Category: #{@category}"
+  def eql?
+    @isbn == outrolivro.isbn
+  end
+
+  def hash
+    @isbn.hash
   end
 end
